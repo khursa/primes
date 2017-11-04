@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Primes</title>
+	<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+	<script>
+		;(function(){
+			function primes(min, max){
+
+				if((min>max) || (min != parseInt(min, 10)) || (max != parseInt(max, 10))) {
+
+					return null;
+
+				} else {
+
+					 var result = "";
+
+					 for (i = min; i <= max; i++){
+
+					 	for (k = 2; k <= i; k++){
+
+					 		if (k == i){
+
+					 			result += k + "; ";
+
+					 		} else if (i%k == 0){
+
+					 			break;
+
+					 		} else {
+
+					 			continue;
+
+					 		}
+					 	}
+					 }
+
+					 return result;
+
+				}
+
+			}
+
+			var min = Number(prompt("Input, please, min positive number", "0"));
+			var max = Number(prompt("Input, please, max positive number", "0"));
+
+			alert (primes(min, max));
+
+		})()
+
+	</script>
+</body>
+</html>
